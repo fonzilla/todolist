@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <input type="text" name="todoitem" value="" placeholder="Type in to-do item here...">
+      <button type="submit" name="button">ADD</button>
+    </form>
+    <ul>
+      {{ #todos }}
+        {{ ^complete }}
+            <a href="/{{ id }}">Mark as Complete</a>
+            <li>{{ todoitem }}</li>
+        {{ /complete }}
+      {{ /todos }}
+    </ul>
+    <hr>
+    <ul>
+      {{ #todos }}
+        {{ #complete }}
+          <li><s>{{ todoitem }}</s></li>
+        {{ /complete }}
+      {{ /todos }}
+    </ul>
+  </body>
+</html>

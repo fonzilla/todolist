@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const mustache = require('express-mustache');
+const mustacheExpress = require('mustache-express');
 const expressValidator = require('express-validator');
 const todoRoutes = require('./todo');
 const app = express();
 
-app.engine('mustache', mustache());
+app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views')
 
