@@ -5,25 +5,41 @@
     <title>To-Do List</title>
   </head>
   <body>
-    <form action="/" method="post">
-      <input type="text" name="todoitem" value="" placeholder="Type in to-do item here...">
-      <button type="submit" name="button">ADD</button>
-    </form>
-    <ul>
-      {{ #todos }}
-        {{ ^complete }}
-            <a href="/{{ id }}">Mark as Complete</a>
-            <li>{{ todoitem }}</li>
-        {{ /complete }}
-      {{ /todos }}
-    </ul>
-    <hr>
-    <ul>
-      {{ #todos }}
-        {{ #complete }}
-          <li><s>{{ todoitem }}</s></li>
-        {{ /complete }}
-      {{ /todos }}
-    </ul>
+    <main>
+      <h1>To-Do List</h1>
+      <div class="form">
+        <form action="/" method="post">
+          <input type="text" name="todoitem" value="" placeholder="Type in to-do item here...">
+          <button type="submit" name="button">ADD</button>
+          <link rel="stylesheet" href="styles.css">
+        </form>
+      </div>
+      <ul>
+        {{ #todos }}
+          {{ ^complete }}
+            <li>
+              <button type="submit" name="button">
+                <a href="/{{ id }}">Mark as Complete</a>
+              </button>
+              <span>
+                {{ todoitem }}
+              </span>
+            </li>
+          {{ /complete }}
+        {{ /todos }}
+      </ul>
+      <hr>
+      <h2>Completed Tasks</h2>
+      <ul>
+        {{ #todos }}
+          {{ #complete }}
+            <li>
+              <s>{{ todoitem }}
+              </s>
+            </li>
+          {{ /complete }}
+        {{ /todos }}
+      </ul>
+    </main>
   </body>
 </html>
