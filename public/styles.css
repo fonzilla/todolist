@@ -2,8 +2,21 @@ main {
   width: 80%;
 }
 
+.nav {
+
+  width: 100%;
+}
+
+h1 {
+  /*width: 400px;*/
+  /*margin: 20px;*/
+  margin-top: 5px;
+  float: left;
+}
+
 form {
   margin: 10px;
+  clear: left;
 }
 
 ul {
@@ -13,4 +26,9 @@ ul {
 
 li {
   margin: 5px;
+}
+
+.login {
+  float: right;
+  margin: 10px;
 }

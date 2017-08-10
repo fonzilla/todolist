@@ -1,34 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const models = require('./models');
-
-// const todos = [
-//   {
-//     todoitem: 'Take a nap',
-//     complete: false,
-//     id: 1
-//   },
-//   {
-//     todoitem: 'Go to NYC',
-//     complete: true,
-//     id: 2
-//   },
-//   {
-//     todoitem: 'Learn coding',
-//     complete: true,
-//     id: 3
-//   },
-//   {
-//     todoitem: 'Get a job',
-//     complete: false,
-//     id: 4
-//   },
-//   {
-//     todoitem: 'Take another nap',
-//     complete: false,
-//     id: 5
-//   },
-// ];
+const models = require('../models');
 
 router.get("/", (req, res)=>{
   models.todo.findAll()
