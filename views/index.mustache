@@ -11,6 +11,7 @@
         <a href="/signup" class="login">Sign Up</a>
         <a href="/login" class="login">Log In</a>
       </div>
+      {{ #loggedIn }}
       <div class="form">
         <form action="/" method="post">
           <input type="text" name="todoitem" value="" placeholder="Type in to-do item here...">
@@ -18,13 +19,16 @@
           <link rel="stylesheet" href="styles.css">
         </form>
       </div>
+      {{ /loggedIn }}
       <ul>
         {{ #todos }}
           {{ ^complete }}
             <li>
+              {{ #loggedIn }}
               <button type="submit" name="button">
                 <a href="/{{ id }}">Mark as Complete</a>
               </button>
+              {{ /loggedIn }}
               <span>
                 {{ todoitem }}
               </span>

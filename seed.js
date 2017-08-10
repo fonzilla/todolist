@@ -20,12 +20,26 @@ const models = require('./models');
 //   console.log(result);
 // })
 
-models.user.create({
-  username:'fonzilla',
-  password:'password123',
-  createdAt: Date.now(),
-  updatedAt: Date.now()
-})
-.then(result => {
-  console.log(result);
-})
+// models.user.create({
+//   username:'fonzilla',
+//   password:'password123',
+//   createdAt: Date.now(),
+//   updatedAt: Date.now()
+// })
+// .then(result => {
+//   console.log(result);
+// })
+
+// models.user.find({
+//   where: {
+//     username: 'fonzilla'
+//   }
+// })
+// .then(function(result) {
+//   console.log(result);
+//   return result.auth('Password123');
+//   // result.instanceMethods.auth('password123');
+// })
+// .then(result => {
+//   console.log(result);
+// })

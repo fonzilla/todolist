@@ -3,9 +3,19 @@ const router = express.Router();
 const models = require('../models');
 
 router.get("/", (req, res)=>{
+  console.log(req.user);
+  let loggedIn;
+  if(req.user){
+    loggedIn = true;
+  } else {
+    loggedIn = false;
+  }
   models.todo.findAll()
   .then(todos => {
-    res.render("index", { todos: todos});
+    res.render("index", {
+      todos: todos,
+      loggedIn: loggedIn,
+      user: req.user});
   })
 })
 
